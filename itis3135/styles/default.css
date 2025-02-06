@@ -8,11 +8,14 @@ body{
 a {
     color: cornsilk;
     text-decoration: none;
+    border: 0;
+    width: 88px;
+    height: 31px;
 }
 
 a:hover{
     color: crimson;
-    text-decoration line;
+    text-decoration: line;
 }
 
 main{
