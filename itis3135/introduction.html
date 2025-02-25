@@ -11,18 +11,7 @@
 
 <body>
     <header>
-        <h1> Roberto Galaviz || ITIS 3135</h1>
-        <nav>
-            <a href="./">Home</a>
-            | |
-            <a href="instruction.html">Introduction</a>
-            | |
-            <a href="contract.html">Contract</a>
-            |  |
-            <a href="stuff/INDEX.html">Crappy</a>
-            |  |
-            <a href="website_evaluations.html">Evaluation</a>
-        </nav>
+        <div data-include="components/header.html"></div>
     </header>
     <main>
         <h2>Introduction</h2>
@@ -71,6 +60,7 @@ ITIS 3135- Web Based Application Design: This course gives a good introduction i
         document.getElementById("validation-link-html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
         document.getElementById("validation-link-css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
     </script>
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 
 
