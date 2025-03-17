@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking For a Hobby</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+            background-color: #fcf5e5;
+            color: #2d2d2d;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #444;
+            color: #fcf5e5;
+            padding: 10px 0;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #f97300;
+            margin: 0 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav a:visited {
+            color: #004225; 
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            display: none; 
+            background: #e6d7b9;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        #what { display: block; } 
+        figure {
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .button-like {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%; 
+            height: auto;
+        }
+        @media (max-width: 1024px) {
+            nav a {
+                margin: 0 10px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            img {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 0;
+            }
+            nav a {
+                font-size: 14px;
+                margin: 0 8px;
+            }
+
+            section {
+                margin: 15px 10px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+
+<header>
+    <h1>Hiking As A Hobby</h1>
+    <nav>
+        <a onclick="showSection('what')">Home</a> |
+        <a onclick="showSection('who')">About Hiking</a> |
+        <a onclick="showSection('when')">Best Times To Hike</a> |
+        <a onclick="showSection('where')">Best Locations</a> |
+        <a onclick="showSection('how')">How To Start</a> |
+        <a onclick="showSection('why')">Why Start Hiking</a> |
+        <a onclick="showSection('ai-prompts')">AI Prompts Used</a>
+    </nav>
+</header>
+
+<main>
+    <section id="what">
+        <h2>What is My Hiking about?</h2>
+        <p>Hiking is an outdoor activity that involves walking in natural environments, typically on trails or paths through forests, mountains, or other scenic landscapes. It is a great way to explore the outdoors, connect with nature, and enjoy physical exercise.</p>
+        <figure>
+            <img src="images/dalle-what.png" alt="Hobby Image" width="300">
+            <figcaption>Example hobby-related image.</figcaption>
+        </figure>
+    </section>
+
+    <section id="who">
+        <h2>My Background In Hiking</h2>
+        <p>I have been recently begun to hike, throughout the years I have always had an interest in the wilderness and decided to try hiking more often.</p>
+        <figure>
+            <img src="images/about.jpg" alt="About me">
+            <figcaption>Image related to my hobby background.</figcaption>
+        </figure>
+    </section>
+
+    <section id="when">
+        <h2>Best Times To Go Hiking</h2>
+        <p>The best time to go hiking depends on the season, weather conditions, and personal preference. Spring and fall are often ideal, as temperatures are mild, and the scenery is stunning with blooming flowers or colorful autumn leaves. Summer offers longer daylight hours, but it's best to hike early in the morning or late in the afternoon to avoid the midday heat.</p>
+        <figure>
+            <img src="images/dalle-when.png" alt="Best time">
+            <figcaption>Illustration of the best time for this hobby.</figcaption>
+        </figure>
+    </section>
+
+    <section id="where">
+        <h2>Where to Do This Hobby</h2>
+        <p>I would recomend places in North Carolina such as the Blue Ridge Mountains to the Outer Banks, or popular trails like Grandfather Mountain, Linville Gorge, and the Appalachian Trail for breathtaking views. Or for easier hikes, check out Hanging Rock or Umstead State Park.</p>
+        <figure>
+            <img src="images/image-where.png" alt="Best locations">
+            <figcaption>Great places to enjoy this hobby.</figcaption>
+        </figure>
+    </section>
+
+    <section id="how">
+        <h2>How to Get Started</h2>
+        <p>To start hiking, choose an easy trail, wear comfortable shoes, and bring water, snacks, and a map. Check the weather, dress in layers, and start with short hikes before tackling longer ones. Stay safe by telling someone your plans and sticking to marked trails.</p>
+        <figure>
+            <img src="images/image-how.png" alt="Best locations">
+            <figcaption>Things to bring while out hiking.</figcaption>
+        </figure>
+    </section>
+
+    <section id="why">
+        <h2>Why I Love This Hobby</h2>
+        <p>The reason I love hiking is because of the peace and quiet you can find out on a trail along with the accomplishment of being able to see a great view at the end of the trail..</p>
+        <figure>
+            <img src="images/image-why.png" alt="Best locations">
+            <figcaption>The great views you will see while hiking</figcaption>
+        </figure>
+    </section>
+
+    <section id="ai-prompts">
+        <h2>AI Prompts Used</h2>
+
+        <p><b>AI prompts for Sections Content</b></p>
+        <ul>
+            <li>What: "I am creating a hobby website can you create a about page explaining what hiking is about"</li>
+            <li>When: "now create a paragraph discussing when is the best time to do this hobby (season, time of day, etc.)"</li>
+            <li>Where: "now create one for recommended locations in North Carolina"</li>
+            <li>How: "create another one for recommending how to get started hiking"</li>
+        </ul>
+        
+        <p><b>AI prompts for Image Generation</b></p>
+        <ul>
+            <li>Home Image: "Give me an image that demonstrates hiking"</li>
+            <li>When Image: "Create an image of a mountatin under different conditions"</li>
+        </ul>
+
+    </section>
+</main>
+
+<footer>
+    <p>Designed by <a href="../company-site/index.html" style="color:	#f97300;">Gizelle Luxe Travels</a>&copy; 2025</p>
+    <a href="https://validator.w3.org/check?uri=referer" id="validation-link-html">
+        <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!"></a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation-link-css">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
+</footer>
+
+<script>
+
+    function showSection(sectionId) {
+            
+            document.querySelectorAll("main section").forEach((section) => {
+                section.style.display = "none";
+            });
+
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+    document.getElementById("validation-link-html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementById("validation-link-css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+
+</script>
+
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
