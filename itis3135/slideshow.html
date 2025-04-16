@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberto's Slideshow || ITIS 3135</title>
+  <link rel="stylesheet" href="styles/default.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div data-include="components/header.html"></div>
+  </header>
+
+  <main>
+    <h2>Image Slideshow of My Name's Initials</h2>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/race.webp" alt="Money" />
+        <div class="caption">R - for race</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/ocean.webp" alt="Yoyo" />
+        <div class="caption">O - for ocean</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/bus.webp" alt="Teacup" />
+        <div class="caption">B - for bus</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/energy.webp" alt="Teacup" />
+        <div class="caption">E - for energy plant</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/river.png" alt="Teacup" />
+        <div class="caption">R - for river</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/transmission-tower.webp" alt="Teacup" />
+        <div class="caption">T - for transmission tower</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/octopus.webp" alt="Teacup" />
+        <div class="caption">O - for octopus</div>
+      </div>
+
+
+
+      <div class="mySlides fade">
+        <img src="images/grassy.webp" alt="Teacup" />
+        <div class="caption">G - for grass</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/airplane.jpg" alt="Teacup" />
+        <div class="caption">A - for airplane</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/linguini.jpg" alt="Teacup" />
+        <div class="caption">L - for linguini</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/apple-pie.jpg" alt="Teacup" />
+        <div class="caption">A - for apple pie</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/van.png" alt="Teacup" />
+        <div class="caption">V - for van</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/iceberg.png" alt="Teacup" />
+        <div class="caption">I - for iceberg</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/zebra.png" alt="Teacup" />
+        <div class="caption">Z - for zebra</div>
+      </div>
+
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <div class="thumbnail-row">
+      <img src="images/race.webp" onclick="showSlide(0)" alt="race thumbnail" />
+      <img src="images/ocean.webp" onclick="showSlide(1)" alt="ocean thumbnail" />
+      <img src="images/bus.webp" onclick="showSlide(2)" alt="bus thumbnail" />
+      <img src="images/energy.webp" onclick="showSlide(0)" alt="en thumbnail" />
+      <img src="images/river.png" onclick="showSlide(1)" alt="river thumbnail" />
+      <img src="images/transmission-tower.webp" onclick="showSlide(2)" alt="transm thumbnail" />
+      <img src="images/octopus.webp" onclick="showSlide(0)" alt="octopus thumbnail" />
+
+      <img src="images/grassy.webp" onclick="showSlide(0)" alt="grass thumbnail" />
+      <img src="images/airplane.jpg" onclick="showSlide(1)" alt="airplane thumbnail" />
+      <img src="images/linguini.jpg" onclick="showSlide(2)" alt="linguini thumbnail" />
+      <img src="images/apple-pie.jpg" onclick="showSlide(0)" alt="apple-pie thumbnail" />
+      <img src="images/van.png" onclick="showSlide(1)" alt="van thumbnail" />
+      <img src="images/iceberg.png" onclick="showSlide(2)" alt="iceberg thumbnail" />
+      <img src="images/zebra.png" onclick="showSlide(2)" alt="zebra thumbnail" />
+    </div>
+
+    <section class="prompt-list">
+      <h3>AI Prompts Used (Tool: DALL·E)</h3>
+      <ul>
+        <li>R - “create a bus race track”</li>
+        <li>O - “create an image of a large ocean in a sunny day”</li>
+        <li>B - “a bus in a busy city”</li>
+        <li>E - “electrical plant with a fire”</li>
+        <li>R - “create an image of a river”</li>
+        <li>T - “i want an image of a large transmission tower at night”</li>
+        <li>O - “a really cool octopus doing tray flips on a skate board”</li>
+        <p></p>
+        <li>G - “a large grassy field on a sunny day”</li>
+        <li>A - “an airplane flying through a city”</li>
+        <li>L - “large plate of linguini being eaten”</li>
+        <li>A - “apple pie by the corner of a window”</li>
+        <li>V - “van driving through a random area”</li>
+        <li>I - "iceberg melting in the ocean”</li>
+        <li>Z - “zebra put in a open field”</li>
+
+
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div data-include="components/footer.html"></div>
+  </footer>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script>
+    let slideIndex = 0;
+    let slides;
+
+    function showSlide(index) {
+      slideIndex = index;
+      slides.hide();
+      slides.eq(slideIndex).fadeIn(400);
+    }
+
+    function changeSlide(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    $(document).ready(function () {
+      slides = $(".mySlides");
+      showSlide(0);
+
+      $(".prev").click(function () {
+        changeSlide(-1);
+      });
+
+      $(".next").click(function () {
+        changeSlide(1);
+      });
+    });
+  </script>
+
+  <style>
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .caption {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      user-select: none;
+      z-index: 2;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .thumbnail-row {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .thumbnail-row img {
+      width: 100px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+
+    .thumbnail-row img:hover {
+      border-color: #222;
+    }
+
+    .prompt-list {
+      margin: 30px auto;
+      max-width: 800px;
+      font-size: 0.9em;
+    }
+
+    .prompt-list ul {
+      list-style-type: disc;
+      padding-left: 1.5em;
+    }
+  </style>
+</body>
+
+</html>
