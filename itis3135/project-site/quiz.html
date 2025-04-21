@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resources | Cybersecurity Awareness Hub</title>
+  <title>Cybersecurity Quiz | Cybersecurity Awareness Hub</title>
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
   <style>
@@ -67,56 +67,41 @@
       margin-bottom: 20px;
     }
 
-    main img {
-      max-width: 100%;
-      height: auto;
+    .quiz-question {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #60935D;
+      border-radius: 5px;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .quiz-question label {
       display: block;
-      margin-top: 20px;
+      margin: 10px 0;
     }
 
-    ul li a {
-      color: #435058;
-      text-decoration: none;
-    }
-
-    ul li a:hover {
-      text-decoration: underline;
-      color: #60935D;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      max-width: 30%;
-      cursor: pointer;
-      border: 2px solid #ccc;
+    button {
+      background-color: #435058;
+      color: #F1F2EE;
+      padding: 10px 20px;
+      border: none;
       border-radius: 4px;
-      transition: transform 0.2s ease;
+      cursor: pointer;
+      font-weight: bold;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    button:hover {
+      background-color: #2f3b42;
     }
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .lightbox img {
-      max-width: 80%;
-      border-radius: 8px;
+    #quiz-result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2rem;
     }
 
     footer {
@@ -136,48 +121,51 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media screen and (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .gallery img {
-        max-width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Resources For Security</h1>
+    <h1>Cybersecurity Awareness Hub</h1>
     <nav>
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="resources.html">Resources</a></li>
         <li><a href="topics.html">Topics</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Helpful Tools & Downloads</h2>
-    <ul>
-      <li><a href="https://www.aura.com/learn/dangers-of-public-wi-fi" target="_blank" rel="noopener noreferrer">Understanding the Dangers of Public Wi-Fi</a></li>
-      <li><a href="https://www.pcmag.com/picks/the-best-antivirus-protection?test_uuid=01nEKitrPAQmw6jRcSPVArQ&test_variant=A" target="_blank" rel="noopener noreferrer">Best Antivirus Software of the Year – PCMag Guide</a></li>
-      <li><a href="https://support.microsoft.com/en-us/windows/create-and-use-strong-passwords-c5cebb49-8c53-4f5e-2bc4-fe357ca048eb" target="_blank" rel="noopener noreferrer">How to Create and Use Strong Passwords (Microsoft)</a></li>
-    </ul>
+    <h2>Test Your Cybersecurity Knowledge</h2>
 
-    <h3>Phishing Example Gallery</h3>
-    <div class="gallery">
-      <img src="images/phishing1.jpg" alt="Phishing Example 1" onclick="openLightbox(this)">
-      <img src="images/phishing2.jpg" alt="Phishing Example 2" onclick="openLightbox(this)">
-      <img src="images/phishing3.jpg" alt="Phishing Example 3" onclick="openLightbox(this)">
-    </div>
+    <form id="cyberQuiz">
+      <div class="quiz-question">
+        <h3>1. What is the safest way to use public Wi-Fi?</h3>
+        <label><input type="radio" name="q1" value="a"> Connect and browse freely</label>
+        <label><input type="radio" name="q1" value="b"> Use a VPN when connecting</label>
+        <label><input type="radio" name="q1" value="c"> Only use HTTPS websites</label>
+      </div>
 
+      <div class="quiz-question">
+        <h3>2. What is phishing?</h3>
+        <label><input type="radio" name="q2" value="a"> A type of firewall</label>
+        <label><input type="radio" name="q2" value="b"> Sending fake messages to steal info</label>
+        <label><input type="radio" name="q2" value="c"> Encrypting data to protect it</label>
+      </div>
+
+      <div class="quiz-question">
+        <h3>3. Which password is most secure?</h3>
+        <label><input type="radio" name="q3" value="a"> Password123</label>
+        <label><input type="radio" name="q3" value="b"> MyDogName</label>
+        <label><input type="radio" name="q3" value="c"> 9f$X@1#bR!</label>
+      </div>
+
+      <button type="button" onclick="checkQuiz()">Submit Answers</button>
+    </form>
+
+    <p id="quiz-result"></p>
   </main>
 
   <footer>
@@ -190,16 +178,25 @@
   </footer>
 
   <script>
-    function openLightbox(img) {
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox').style.display = 'flex';
-    }
+    function checkQuiz() {
+      const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "c"
+      };
+      let score = 0;
 
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
+      for (let question in answers) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        if (selected && selected.value === answers[question]) {
+          score++;
+        }
+      }
+
+      const resultText = `You scored ${score} out of ${Object.keys(answers).length}.`;
+      document.getElementById("quiz-result").textContent = resultText;
     }
   </script>
-
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </body>
 </html>

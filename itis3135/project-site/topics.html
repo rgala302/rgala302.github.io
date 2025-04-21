@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Cybersecurity Awareness Hub</title>
+  <title>Best Practices | Cybersecurity Awareness Hub</title>
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&display=swap');
-
 
     body {
       font-family: 'Roboto Slab', serif;
@@ -26,9 +25,8 @@
     }
 
     h1 {
-        margin-bottom: 10px;
+      margin-bottom: 10px;
     }
-
 
     .navbar {
       display: flex;
@@ -69,11 +67,18 @@
       margin-bottom: 20px;
     }
 
-    main img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-top: 20px;
+    article {
+      background-color: #ffffff;
+      border-left: 5px solid #60935D;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #435058;
     }
 
     footer {
@@ -94,82 +99,51 @@
       text-decoration: underline;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-
-    form label {
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-
-    form input,
-    form textarea {
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: 'Roboto Slab', serif;
-    }
-
-    form button {
-      background-color: #435058;
-      color: #F1F2EE;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    form button:hover {
-      background-color: #2f3b42;
-    }
-
     @media screen and (max-width: 600px) {
       .navbar {
         flex-direction: column;
         align-items: center;
-      }
-
-      form {
-        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Cybersecurity Awareness Hub</h1>
+    <h1>Topics In Cybersecurity</h1>
     <nav>
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="best.html">Best Practices</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="resources.html">Recources</a></li>
+        <li><a href="topics.html" class="active">Topics</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Contact Us</h2>
-    <form id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+    <h2>Cyber Hygiene Tips</h2>
+    <ul>
+      <li>Use strong, unique passwords</li>
+      <li>Enable two-factor authentication</li>
+      <li>Keep your software up to date</li>
+      <li>Avoid suspicious emails and links</li>
+    </ul>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+    <article>
+      <h3>Public Wi-Fi Dangers</h3>
+      <p>Using free public WiFi at places like at airports, cafes, or hotels might seem convenient, however it can expose you to security risks such as hackers who can intercept unencrypted connections and steal sensitive data like passwords or financial information. We recommend avoiding accessing bank accounts or making purchases on public networks. Some methods to secure your data we recommend are using a VPN to encrypt your data when necessary.</p>
+    </article>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
+    <article>
+      <h3>Phishing Attacks</h3>
+      <p>Phishing ranks among the cybercrime tactics with the highest level of popularity when it comes to obtaining individuals providing sensitive information. It comes as an email or message that look legitimate, coercing you into opening a hyperlink or an attachment. Verify the sender's mail each time, be cautious around urgent or ominous messages, and never provide personal information unless absolutely sure of who you are interacting with.</p>
+    </article>
 
-      <button type="submit">Send</button>
-    </form>
-    <p id="formResponse"></p>
+    <article>
+      <h3>Password Security</h3>
+      <p>Strong passwords are your safest guard online. Avoid well-known words or easily predictable sequences. Substitute them with a mix of uppercase and lowercase letters, numbers, and symbols instead. It is best to employ a password manager to generate and store complex passwords, and never reuse the same password on more than one website to restrict harm in case there is a break-in.</p>
+    </article>
   </main>
 
   <footer>
@@ -180,8 +154,7 @@
     <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation-link-css">
         <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
   </footer>
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
-  
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </body>
 </html>
