@@ -98,18 +98,18 @@
       <img src="images/race.webp" onclick="showSlide(0)" alt="race thumbnail" />
       <img src="images/ocean.webp" onclick="showSlide(1)" alt="ocean thumbnail" />
       <img src="images/bus.webp" onclick="showSlide(2)" alt="bus thumbnail" />
-      <img src="images/energy.webp" onclick="showSlide(0)" alt="en thumbnail" />
-      <img src="images/river.png" onclick="showSlide(1)" alt="river thumbnail" />
-      <img src="images/transmission-tower.webp" onclick="showSlide(2)" alt="transm thumbnail" />
-      <img src="images/octopus.webp" onclick="showSlide(0)" alt="octopus thumbnail" />
+      <img src="images/energy.webp" onclick="showSlide(3)" alt="en thumbnail" />
+      <img src="images/river.png" onclick="showSlide(4)" alt="river thumbnail" />
+      <img src="images/transmission-tower.webp" onclick="showSlide(5)" alt="transm thumbnail" />
+      <img src="images/octopus.webp" onclick="showSlide(6)" alt="octopus thumbnail" />
 
-      <img src="images/grassy.webp" onclick="showSlide(0)" alt="grass thumbnail" />
-      <img src="images/airplane.jpg" onclick="showSlide(1)" alt="airplane thumbnail" />
-      <img src="images/linguini.jpg" onclick="showSlide(2)" alt="linguini thumbnail" />
-      <img src="images/apple-pie.jpg" onclick="showSlide(0)" alt="apple-pie thumbnail" />
-      <img src="images/van.png" onclick="showSlide(1)" alt="van thumbnail" />
-      <img src="images/iceberg.png" onclick="showSlide(2)" alt="iceberg thumbnail" />
-      <img src="images/zebra.png" onclick="showSlide(2)" alt="zebra thumbnail" />
+      <img src="images/grassy.webp" onclick="showSlide(7)" alt="grass thumbnail" />
+      <img src="images/airplane.jpg" onclick="showSlide(8)" alt="airplane thumbnail" />
+      <img src="images/linguini.jpg" onclick="showSlide(9)" alt="linguini thumbnail" />
+      <img src="images/apple-pie.jpg" onclick="showSlide(10)" alt="apple-pie thumbnail" />
+      <img src="images/van.png" onclick="showSlide(11)" alt="van thumbnail" />
+      <img src="images/iceberg.png" onclick="showSlide(12)" alt="iceberg thumbnail" />
+      <img src="images/zebra.png" onclick="showSlide(13)" alt="zebra thumbnail" />
     </div>
 
     <section class="prompt-list">
@@ -140,120 +140,12 @@
     <div data-include="components/footer.html"></div>
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    let slides;
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    function showSlide(index) {
-      slideIndex = index;
-      slides.hide();
-      slides.eq(slideIndex).fadeIn(400);
-    }
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/slideshow.js"></script>
 
-    function changeSlide(n) {
-      slideIndex = (slideIndex + n + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
-
-    $(document).ready(function () {
-      slides = $(".mySlides");
-      showSlide(0);
-
-      $(".prev").click(function () {
-        changeSlide(-1);
-      });
-
-      $(".next").click(function () {
-        changeSlide(1);
-      });
-    });
-  </script>
-      <script src="scripts/HTMLInclude.min.js"></script>
-      <script src="scripts/main.js"></script>
-
-  <style>
-    .slideshow-container {
-      max-width: 800px;
-      position: relative;
-      margin: auto;
-    }
-
-    .mySlides {
-      display: none;
-      text-align: center;
-    }
-
-    .mySlides img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .caption {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 24px;
-      border-radius: 0 3px 3px 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      user-select: none;
-      z-index: 2;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .thumbnail-row {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .thumbnail-row img {
-      width: 100px;
-      border: 2px solid #ccc;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: border-color 0.3s;
-    }
-
-    .thumbnail-row img:hover {
-      border-color: #222;
-    }
-
-    .prompt-list {
-      margin: 30px auto;
-      max-width: 800px;
-      font-size: 0.9em;
-    }
-
-    .prompt-list ul {
-      list-style-type: disc;
-      padding-left: 1.5em;
-    }
-  </style>
 </body>
 
 </html>
