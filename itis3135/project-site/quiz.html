@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cybersecurity Quiz | Cybersecurity Awareness Hub</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+  <script defer src="js/quiz.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&display=swap');
 
@@ -141,62 +141,22 @@
     <h2>Test Your Cybersecurity Knowledge</h2>
 
     <form id="cyberQuiz">
-      <div class="quiz-question">
-        <h3>1. What is the safest way to use public Wi-Fi?</h3>
-        <label><input type="radio" name="q1" value="a"> Connect and browse freely</label>
-        <label><input type="radio" name="q1" value="b"> Use a VPN when connecting</label>
-        <label><input type="radio" name="q1" value="c"> Only use HTTPS websites</label>
-      </div>
-
-      <div class="quiz-question">
-        <h3>2. What is phishing?</h3>
-        <label><input type="radio" name="q2" value="a"> A type of firewall</label>
-        <label><input type="radio" name="q2" value="b"> Sending fake messages to steal info</label>
-        <label><input type="radio" name="q2" value="c"> Encrypting data to protect it</label>
-      </div>
-
-      <div class="quiz-question">
-        <h3>3. Which password is most secure?</h3>
-        <label><input type="radio" name="q3" value="a"> Password123</label>
-        <label><input type="radio" name="q3" value="b"> MyDogName</label>
-        <label><input type="radio" name="q3" value="c"> 9f$X@1#bR!</label>
-      </div>
-
-      <button type="button" onclick="checkQuiz()">Submit Answers</button>
+      <!-- Dynamic Quiz Content will be Injected Here -->
     </form>
 
+    <button type="button" onclick="checkQuiz()">Submit Answers</button>
     <p id="quiz-result"></p>
   </main>
 
   <footer>
     <p>Designed By <a href="../index.html">Roberto Galaviz</a>, <a href="https://www.freecodecamp.org/certification/rgalavi/responsive-web-design"><i>Certified in Responsive Web Design </i></a></p>
-    &copy; 2025 Project Name |
-    <a href="https://validator.w3.org/check?uri=referer" id="validation-link-html">
-      <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!"></a>
+      &copy; 2025 Project Name |
+      <a href="https://validator.w3.org/check?uri=referer" id="validation-link-html">
+        <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!"></a>
     <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation-link-css">
-      <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
   </footer>
-
-  <script>
-    function checkQuiz() {
-      const answers = {
-        q1: "b",
-        q2: "b",
-        q3: "c"
-      };
-      let score = 0;
-
-      for (let question in answers) {
-        const selected = document.querySelector(`input[name="${question}"]:checked`);
-        if (selected && selected.value === answers[question]) {
-          score++;
-        }
-      }
-
-      const resultText = `You scored ${score} out of ${Object.keys(answers).length}.`;
-      document.getElementById("quiz-result").textContent = resultText;
-    }
-  </script>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
