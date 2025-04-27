@@ -1,26 +1,24 @@
-let currentIndex = 0;
-const images = document.querySelectorAll('.gallery img'); // Get all images in the gallery
+document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.gallery img');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+  let currentIndex = 0;
 
-// Function to show the next image
-function showNextImage() {
-  images[currentIndex].style.display = 'none'; // Hide the current image
-  currentIndex = (currentIndex + 1) % images.length; // Move to the next image (loop back to the first image)
-  images[currentIndex].style.display = 'block'; // Show the new image
-}
+  const showImage = (index) => {
+    images.forEach((img) => img.classList.remove('active'));
+    images[index].classList.add('active'); 
+  };
 
-// Initialize the slideshow
-function initSlideshow() {
-  images.forEach((img, index) => {
-    if (index !== currentIndex) {
-      img.style.display = 'none'; // Hide all images except the first one
-    } else {
-      img.style.display = 'block'; // Show the first image
-    }
-  });
-  
-  // Set an interval to switch images every 3 seconds
-  setInterval(showNextImage, 3000);
-}
+  const showNextImage = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  };
 
-// Call the initSlideshow function when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', initSlideshow);
+  const showPrevImage = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+
+  leftArrow.addEventListener('click', () => showPrevImage()); 
+  rightArrow.addEventListener('click', () => showNextImage());
+});

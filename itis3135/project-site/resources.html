@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources | Cybersecurity Awareness Hub</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+  <script defer src="js/slideshow.js"></script> <!-- Updated script link -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&display=swap');
 
@@ -85,38 +86,46 @@
     }
 
     .gallery {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       margin-top: 20px;
+      max-width: 100%;
     }
 
     .gallery img {
-      max-width: 30%;
-      cursor: pointer;
-      border: 2px solid #ccc;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      display: none;
       border-radius: 4px;
       transition: transform 0.2s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .gallery img.active {
+      display: block;
     }
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 100;
     }
 
-    .lightbox img {
-      max-width: 80%;
-      border-radius: 8px;
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
     }
 
     footer {
@@ -149,6 +158,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Resources For Security</h1>
@@ -173,21 +183,29 @@
 
     <h3>Phishing Example Gallery</h3>
     <div class="gallery">
-      <img src="images/phishing1.png" alt="Phishing Example 1">
+      <button class="arrow left">&lt;</button>
+      <img src="images/phishing1.png" alt="Phishing Example 1" class="active">
       <img src="images/phishing2.png" alt="Phishing Example 2">
       <img src="images/phishing3.png" alt="Phishing Example 3">
+      <img src="images/phishing4.png" alt="Phishing Example 4">
+      <img src="images/phishing5.png" alt="Phishing Example 5">
+      <img src="images/phishing6.png" alt="Phishing Example 6">
+      <button class="arrow right">&gt;</button>
     </div>
-
   </main>
 
   <footer>
     <p>Designed By <a href="../index.html">Roberto Galaviz</a>, <a href="https://www.freecodecamp.org/certification/rgalavi/responsive-web-design"><i>Certified in Responsive Web Design </i></a></p>
-      &copy; 2025 Project Name |
-      <a href="https://validator.w3.org/check?uri=referer" id="validation-link-html">
-        <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!"></a>
+    &copy; 2025 Project Name |
+    <a href="https://validator.w3.org/check?uri=referer" id="validation-link-html">
+      <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!">
+    </a>
     <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation-link-css">
-        <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"></a>
+      <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+    </a>
   </footer>
+
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
