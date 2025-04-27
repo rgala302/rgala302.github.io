@@ -4,7 +4,7 @@ const images = document.querySelectorAll('.gallery img');
 let currentIndex = 0;
 
 function showImage(index) {
-  images.forEach(img => img.classList.remove('active'));
+  images.forEach((img) => img.classList.remove('active'));
   if (images[index]) {
     images[index].classList.add('active');
   }
