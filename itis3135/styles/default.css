@@ -148,4 +148,12 @@ figure{
     object-fit: contain;
   }
   
-  
+  #canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+canvas {
+    background-color: #fdfdf7; 
+    border: 1px solid #ccc;
+}
